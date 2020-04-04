@@ -8,11 +8,13 @@ get '/secret' do
   'Here I am'
 end
 
-get '/cat' do
+get '/random-cat' do
   @cat_name = %w(Amigo Oscar Viking).sample
   erb(:index)
 end
 
-get '/shopping list' do
-  'add what else you need'
+get '/named-cat' do
+  p params
+  @cat_name = params[:name]
+  erb(:index)
 end
